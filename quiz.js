@@ -37,37 +37,61 @@
 // alert(form(6, arr));
 
 //*câu 4
-class Staff {
-    constructor(Fullname, Email) {
-        this.Fullname = Fullname;
-        this.Email = Email;
-        this.setFullname = function(Value) {
-            return this.Fullname = Value;
-        };
-        this.getFullname = function() {
-            return this.Fullname;
-        };
-        this.setEmail = function(Value) {
-            return this.Email = Value;
-        };
-        this.getEmail = function() {
-            return this.Email;
-        };
-        this.toString = function() {
-            return `Fullname: ${this.Fullname}<br>Email: ${this.Email}<br>`;
+// class Staff {
+//     constructor(Fullname, Email) {
+//         this.Fullname = Fullname;
+//         this.Email = Email;
+//         this.setFullname = function(Value) {
+//             return this.Fullname = Value;
+//         };
+//         this.getFullname = function() {
+//             return this.Fullname;
+//         };
+//         this.setEmail = function(Value) {
+//             return this.Email = Value;
+//         };
+//         this.getEmail = function() {
+//             return this.Email;
+//         };
+//         this.toString = function() {
+//             return `Fullname: ${this.Fullname}<br>Email: ${this.Email}<br>`;
+//         };
+//     };
+// };
+// let david = new Staff("David", "david@gmail.com");
+// david.setFullname("David Do");
+// david.setEmail("david.do@gmail.com");
+// document.write(david.toString());
+// const staffs = [
+//     david,
+//     new Staff("Thiên", "Thiennn@gmail.com"),
+//     new Staff("Huy", "Huyyy@gmail.com"),
+//     new Staff("Linh", "Linhhh@gmail.com"),
+// ];
+// for (let i = 0; i < staffs.length; i++) {
+//     document.write(staffs[i].toString());
+// };
+
+// *câu 3
+
+const arrayCharacter = ["a", "o", "e", "u", "i"];
+
+function daynguyenam(Array) {
+    let i = 0,
+        j = 0,
+        count = 0;
+    for (i = 0; i < Array.length; i++) {
+        for (j = 0; j < arrayCharacter.length; j++) {
+            if (Array[i].toLowerCase() == arrayCharacter[j]) {
+                count++;
+            };
         };
     };
+    if (count != 0) {
+        return count;
+    } else {
+        return false;
+    };
 };
-let david = new Staff("David", "david@gmail.com");
-david.setFullname("David Do");
-david.setEmail("david.do@gmail.com");
-document.write(david.toString());
-const staffs = [
-    david,
-    new Staff("Thiên", "Thiennn@gmail.com"),
-    new Staff("Huy", "Huyyy@gmail.com"),
-    new Staff("Linh", "Linhhh@gmail.com"),
-];
-for (let i = 0; i < staffs.length; i++) {
-    document.write(staffs[i].toString());
-};
+let arrayValue = "trandaithientien".split("");
+alert(`Chuỗi [${arrayValue}] có ${daynguyenam(arrayValue)} kí tự nguyên âm của mảng [${arrayCharacter}].`);
